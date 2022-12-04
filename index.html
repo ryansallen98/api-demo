@@ -4,42 +4,51 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/normalize.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
     <title>Demo</title>
 </head>
 <body>
-    <button id="walletOpen">Deposit $100 now!</button>
-    <script>
-        
-        const
-            walletOpen = document.getElementById('walletOpen'),
-            uri = 'https://bux.digital/v1/pay/?',
-            params = {
-                merchant_name: 'demo',
-                invoice: '1',
-                order_key: '99',
-                merchant_addr: 'ecash:qpujhpzn2prltsm8evglcz0q5tdzr90nkck7q842kv',
-                amount: '199',
-                offer_name: 'demo-offer',
-                offer_description: 'demo-desc',
-                success_url: 'https://google.com',
-                cancel_url: 'https://bing.com',
-                ipn_url: 'https://google.com',
-                return_json: true
-            };
-
-        walletOpen.onclick = () => {
-            fetch('https://bux.digital/v1/pay/?' + new URLSearchParams(params).toString())
-                .then(response => response.json())
-                .then((data) => {
-                    console.log(data);
-                    window.open(data.paymentUrl);
-                })
-                .catch((err) => {
-                    console.log('ERROR:', err.message);
-                });
-        }
-        
-    </script>
+    <main class="page-wrapper">
+        <section>
+            <div class="container">
+                <div class="nav">
+                    <img src="/assets/images/logo.png" alt="Logo">
+                </div>
+            </div>
+        </section>
+        <section class="hero">
+            <div class="container">
+                <div class="hero--flex">
+                    <div class="hero--left">
+                        <h1 class="hero--title">
+                            <span class="large-text">$2,500</span>
+                            <span class="tape-text">Welcome Bonus</span>
+                        </h1>
+                        <p class="hero-paragraph">Get a whopping 250% slots bonus up to $2,500 on your first deposit!</p>
+                        <button id="walletOpen" class="button">Claim Now!</button>
+                    </div>
+                    <div class="hero--right">
+                        <img src="/assets/images/character.png" alt="Beach Girl Mascot">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="curve">
+            <img src="/assets/images/curve.svg" alt="">
+        </div>
+        <section>
+            <div class="container">
+                <h2 class="heading">Step into paradise. Treat yourself with extra funds that let you play longer and win bigger.</h2>
+                <p>•The 250% match bonus is for new members and is applicable to their first deposit.<br>Add this bonus to your account by selecting promo code <strong>WELCOME1</strong>, after making your deposit.</p>
+                <p>•You must wager this bonus 30X (thirty times) before winnings generated from it can be requested for cash out.</p>
+                <p>•Attempting to cash out your initial deposit plus bonus amount without having bet the funds is not allowed.</p>
+                <p>•Only one player account per person is allowed. Players who are found to register multiple accounts in order to redeem this bonus will not be eligible to receive any winnings, and all cash outs will be cancelled and the accounts related, closed.</p>
+                <p>•Management reserves the right to modify or cancel this promotion at any time. General house rules/terms and conditions apply.</p>
+                <p><strong>Bonus</strong> 250% <br><strong>Playthrough </strong>30x<br><strong>Minimum deposit</strong> $50<br><strong>Maximum bonus</strong> $2,500<br><strong>Maximum cash out amoun</strong>t $5,000</p>
+            </div>
+        </section>
+    </main>
+    <script src="script.js" type="text/javascript"></script>
 </body>
-
 </html>

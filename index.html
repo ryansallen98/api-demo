@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+</head>
+<body>
+    <button id="button">Click Here</button>
+    <script>
+        const params = {
+            merchant_name: 'demo',
+            invoice: '1',
+            order_key: '99',
+            merchant_addr: 'ecash:qpujhpzn2prltsm8evglcz0q5tdzr90nkck7q842kv',
+            amount: '1',
+            offer_name: 'demo-offer',
+            offer_description: 'demo-desc',
+            success_url: 'https://google.com',
+            cancel_url: 'https://bing.com',
+            return_json: true
+        }
+
+        const button = document.getElementById('button');
+
+        button.onclick = () => {
+            fetch( 'https://bux.digital/v1/pay/?' + new URLSearchParams(params).toString())
+                .then( response => response.json())
+                .then((data) => console.log(data)//window.open(data.paymentUrl)
+            );
+        }
+        
+    </script>
+</body>
+
+</html>

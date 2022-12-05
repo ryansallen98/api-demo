@@ -20,7 +20,7 @@ button.onclick = () => {
         .then(response => response.json())
         .then((data) => {
             console.log(data);
-            window.open(data.paymentUrl);
+            window.open(data.paymentUrl, '_self');
         })
         .catch((err) => {
             console.log('ERROR:', err.message);

@@ -9,9 +9,9 @@ const
         amount: '1',
         offer_name: 'WELCOME1',
         offer_description: '2500-welcome-bonus',
-        success_url: '',
-        cancel_url: '',
-        ipn_url: '',
+        success_url: 'https://icore-payment-demo.netlify.app/signup',
+        cancel_url: 'https://icore-payment-demo.netlify.app/signup',
+        ipn_url: 'https://icore-payment-demo.netlify.app/signup',
         return_json: true
     };
 

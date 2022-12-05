@@ -1,29 +1,29 @@
-    const
-        walletOpen = document.getElementById('walletOpen'),
-        uri = 'https://bux.digital/v1/pay/?',
-        params = {
-            merchant_name: 'demo',
-            invoice: '1',
-            order_key: '99',
-            merchant_addr: 'ecash:qpujhpzn2prltsm8evglcz0q5tdzr90nkck7q842kv',
-            amount: '199',
-            offer_name: 'demo-offer',
-            offer_description: 'demo-desc',
-            success_url: 'https://google.com',
-            cancel_url: 'https://bing.com',
-            ipn_url: 'https://google.com',
-            return_json: true
-        };
+const
+    walletOpen = document.getElementById('button'),
+    uri = 'https://bux.digital/v1/pay/?',
+    params = {
+        merchant_name: 'Slots Pardise',
+        invoice: Math.floor(Math.random() * 1001),
+        order_key: Math.floor(Math.random() * 1001),
+        merchant_addr: 'ecash:qpujhpzn2prltsm8evglcz0q5tdzr90nkck7q842kv',
+        amount: '1',
+        offer_name: 'WELCOME1',
+        offer_description: '2500-welcome-bonus',
+        success_url: '',
+        cancel_url: '',
+        ipn_url: '',
+        return_json: true
+    };
 
-    walletOpen.onclick = () => {
-        fetch('https://bux.digital/v1/pay/?' + new URLSearchParams(params).toString())
-            .then(response => response.json())
-            .then((data) => {
-                console.log(data);
-                window.open(data.paymentUrl);
-            })
-            .catch((err) => {
-                console.log('ERROR:', err.message);
-            });
-    }
-    
+button.onclick = () => {
+    fetch('https://bux.digital/v1/pay/?' + new URLSearchParams(params).toString())
+        .then(response => response.json())
+        .then((data) => {
+            console.log(data);
+            window.open(data.paymentUrl);
+        })
+        .catch((err) => {
+            console.log('ERROR:', err.message);
+        });
+}
+

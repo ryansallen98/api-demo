@@ -188,9 +188,10 @@ section {
     margin-top: -5px;
     margin-bottom: 30px;
     margin-inline: auto;
-    font-size: 20px;
-    line-height: 28px;
+    font-size: 40px;
+    line-height: 48px;
     text-align: center;
+    font-weight: 500;
 }
 
 .button {
@@ -295,6 +296,7 @@ section {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    background-color: white;
 }
 
 .signup-form > input{
@@ -371,6 +373,7 @@ section {
     height: 100%;
     background-color: var(--pink);
     border-radius: 100px;
+    z-index: 0;
 }
 
 /* MOBILE DISPLAY */
@@ -415,6 +418,12 @@ section {
 
     .hero-paragraph {
         width: 100%;
+    }
+
+    .signup-paragraph {
+        width: 100%;
+        font-size: 28px;
+        line-height: 32x;
     }
 
     .payment {

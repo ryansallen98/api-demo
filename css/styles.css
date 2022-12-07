@@ -75,6 +75,8 @@ section {
 
 .page-wrapper {
     overflow: hidden;
+    position: relative;
+    z-index: 4;
 }
 
 .nav {

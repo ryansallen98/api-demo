@@ -297,6 +297,8 @@ section {
     flex-direction: column;
     gap: 20px;
     background-color: white;
+    position: relative;
+    z-index: 5;
 }
 
 .signup-form > input{
@@ -327,6 +329,8 @@ section {
     width: 100%;
     max-width: 50%;
     margin-inline: auto;
+    z-index: 5;
+    background-color: white;
 }
 
 .stage1 {
